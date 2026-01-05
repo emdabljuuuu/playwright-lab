@@ -70,3 +70,16 @@ jobs:
         name: html-report--attempt-${{ github.run_attempt }}
         path: playwright-report
         retention-days: 14
+    
+    - name: Send Slack Notification
+      if: always() 
+      # Wyślij nawet jak testy padły (a zwłaszcza wtedy!)
+      uses: ravsamhq/notify-slack-action@v2
+      with:
+        status: ${{ job.status }} # Sukces czy Porażka?
+        notify_when: 'failure,success'
+        notification_title: 'Raport Testów Automatycznych (Playwright)'
+        message_format: '{emoji} *{workflow}* {status_message} w {duration_format}. <{repo_url}|Zobacz Kod> lub <{run_url}|Pobierz Raport>'
+        footer: 'Zbudowano przez GitHub Actions'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
