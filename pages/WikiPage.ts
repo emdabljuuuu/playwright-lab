@@ -10,7 +10,7 @@ export class WikiPage {
   constructor(page: Page) {
     this.page = page;
     // Definiujemy selektory RAZ, w jednym miejscu
-    this.searchInput = page.getByRole('searchbox', { name: 'Szukaj w Wikipedii' });
+    this.searchInput = page.locator('#searchform [name="search"]');
     this.searchResults = page.locator('.cdx-menu-item__content').first(); // Dostosuj selektor do swojej wersji wikipedii
     this.heading = page.locator('#firstHeading');
   }
