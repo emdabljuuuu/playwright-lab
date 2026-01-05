@@ -1,0 +1,33 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  test-in-parallel:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    
+    # TU DZIEJE SIĘ MAGIA:
+    strategy:
+      fail-fast: false # Jak jeden padnie, reszta leci dalej
+      matrix:
+        shardIndex: [1, 2, 3] # Chcemy 3 maszyny (nr 1, nr 2, nr 3)
+        shardTotal: [3]       # Musimy powiedzieć Playwrightowi, że w sumie jest 3
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+    
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
+    - name: Run Playwright tests
+      # Przekazujemy numerek maszyny do komendy Playwrighta
+      run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
