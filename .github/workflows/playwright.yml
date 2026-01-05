@@ -4,6 +4,10 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   test-in-parallel:
     timeout-minutes: 60
@@ -70,6 +74,19 @@ jobs:
         name: html-report--attempt-${{ github.run_attempt }}
         path: playwright-report
         retention-days: 14
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact for Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: playwright-report # Folder z HTMLem
+
+    # ZMIANA 2: Wrzucamy na serwer
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
     
     - name: Send Slack Notification
       if: always() 
@@ -79,7 +96,7 @@ jobs:
         status: ${{ job.status }} # Sukces czy Porażka?
         notify_when: 'failure,success'
         notification_title: 'Raport Testów Automatycznych (Playwright)'
-        message_format: '{emoji} *{workflow}* {status_message} w {duration_format}. <{repo_url}|Zobacz Kod> lub <{run_url}|Pobierz Raport>'
+        message_format: '{emoji} *{workflow}* {status_message} w {duration_format}. <{repo_url}|Zobacz Kod> lub <https://emdabljuuuu.github.io/playwright-lab/|👉 ZOBACZ RAPORT ONLINE>'
         footer: 'Zbudowano przez GitHub Actions'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
