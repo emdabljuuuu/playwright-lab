@@ -1,0 +1,11 @@
+[STEP START] createDefaultUser with []
+[STEP STOP] createDefaultUser
+[STEP START] verifyUserInDb with [
+  {
+    id: 11,
+    name: 'Danyka',
+    username: 'Satterfield-Lowe',
+    email: 'Ursula61@yahoo.com',
+    address: { street: 'Murray Estate', city: 'New Kaleyboro' }
+  }
+]

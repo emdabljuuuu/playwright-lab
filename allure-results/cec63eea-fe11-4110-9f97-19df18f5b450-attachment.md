@@ -1,0 +1,813 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Przejdź do zawartości" [ref=e2] [cursor=pointer]:
+    - /url: "#bodyContent"
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - navigation "Witryna" [ref=e6]:
+        - generic "Główne menu" [ref=e7]:
+          - button "Menu główne" [ref=e8] [cursor=pointer]
+          - generic [ref=e11]: Menu główne
+      - link "Wikipedia wolna encyklopedia" [ref=e12] [cursor=pointer]:
+        - /url: /wiki/Wikipedia:Strona_g%C5%82%C3%B3wna
+        - img [ref=e13]
+        - generic [ref=e14]:
+          - img "Wikipedia" [ref=e15]
+          - img "wolna encyklopedia" [ref=e16]
+    - generic [ref=e17]:
+      - search [ref=e18]:
+        - generic [ref=e23]:
+          - generic [ref=e25]:
+            - combobox "Przeszukaj Wikipedię" [active] [ref=e26]
+            - img [ref=e28]
+          - button "Szukaj" [ref=e31]
+      - navigation "Narzędzia osobiste" [ref=e32]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Wspomóż Wikipedię" [ref=e38] [cursor=pointer]:
+              - /url: https://donate.wikimedia.org/?wmf_source=donate&wmf_medium=sidebar&wmf_campaign=pl.wikipedia.org&uselang=pl
+          - listitem [ref=e39]:
+            - link "Utwórz konto" [ref=e40] [cursor=pointer]:
+              - /url: /w/index.php?title=Specjalna:Utw%C3%B3rz_konto&returnto=Wikipedia%3AStrona+g%C5%82%C3%B3wna
+          - listitem [ref=e41]:
+            - link "Zaloguj się" [ref=e42] [cursor=pointer]:
+              - /url: /w/index.php?title=Specjalna:Zaloguj&returnto=Wikipedia%3AStrona+g%C5%82%C3%B3wna
+  - generic [ref=e44]:
+    - main [ref=e48]:
+      - generic [ref=e49]:
+        - link "Przejdź do treści" [ref=e50] [cursor=pointer]:
+          - /url: "#mw-content-text"
+        - generic [ref=e51]:
+          - button "Przejdź do artykułu w innym języku. Treść dostępna w 60 językach" [ref=e52] [cursor=pointer]
+          - generic [ref=e55]: 60 języków
+      - generic [ref=e57]:
+        - navigation "Przestrzenie nazw" [ref=e59]:
+          - generic [ref=e60]:
+            - generic:
+              - list:
+                - listitem [ref=e61]:
+                  - link "Strona główna" [ref=e62] [cursor=pointer]:
+                    - /url: /wiki/Wikipedia:Strona_g%C5%82%C3%B3wna
+                    - generic [ref=e63]: Strona główna
+                - listitem [ref=e64]:
+                  - link "Dyskusja" [ref=e65] [cursor=pointer]:
+                    - /url: /wiki/Dyskusja_Wikipedii:Strona_g%C5%82%C3%B3wna
+                    - generic [ref=e66]: Dyskusja
+        - generic [ref=e67]:
+          - navigation "Widok" [ref=e68]:
+            - generic [ref=e69]:
+              - generic:
+                - list:
+                  - listitem [ref=e70]:
+                    - link "Czytaj" [ref=e71] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Strona_g%C5%82%C3%B3wna
+                      - generic [ref=e72]: Czytaj
+                  - listitem [ref=e73]:
+                    - link "Kod źródłowy" [ref=e74] [cursor=pointer]:
+                      - /url: /w/index.php?title=Wikipedia:Strona_g%C5%82%C3%B3wna&action=edit
+                      - generic [ref=e75]: Kod źródłowy
+                  - listitem [ref=e76]:
+                    - link "Wyświetl historię" [ref=e77] [cursor=pointer]:
+                      - /url: /w/index.php?title=Wikipedia:Strona_g%C5%82%C3%B3wna&action=history
+                      - generic [ref=e78]: Wyświetl historię
+          - navigation "Narzędzia dla stron" [ref=e79]:
+            - generic [ref=e80]:
+              - button "Narzędzia" [ref=e81] [cursor=pointer]
+              - generic [ref=e83] [cursor=pointer]: Narzędzia
+      - navigation "Wygląd" [ref=e86]:
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: Wygląd
+            - button "ukryj" [ref=e91] [cursor=pointer]
+          - generic [ref=e92]:
+            - generic [ref=e93]: Tekst
+            - list [ref=e95]:
+              - listitem [ref=e96]:
+                - generic [ref=e98]:
+                  - generic [ref=e99]:
+                    - radio "Mały" [ref=e100]
+                    - generic [ref=e103]: Mały
+                  - generic [ref=e104]:
+                    - radio "Normalny" [checked] [ref=e105]
+                    - generic [ref=e108]: Normalny
+                  - generic [ref=e109]:
+                    - radio "Duży" [ref=e110]
+                    - generic [ref=e113]: Duży
+          - generic [ref=e114]:
+            - generic [ref=e115]: Szerokość
+            - list [ref=e117]:
+              - listitem [ref=e118]:
+                - generic [ref=e120]:
+                  - generic [ref=e121]:
+                    - radio "Normalna" [checked] [ref=e122]
+                    - generic [ref=e125]: Normalna
+                  - generic [ref=e126]:
+                    - radio "Duża" [ref=e127]
+                    - generic [ref=e130]: Duża
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - text: Kolor
+              - generic [ref=e133]: (beta)
+            - list [ref=e135]:
+              - listitem [ref=e136]:
+                - generic [ref=e138]:
+                  - generic [ref=e139]:
+                    - radio "Automatyczny" [ref=e140]
+                    - generic [ref=e143]: Automatyczny
+                  - generic [ref=e144]:
+                    - radio "Jasny" [checked] [ref=e145]
+                    - generic [ref=e148]: Jasny
+                  - generic [ref=e149]:
+                    - radio "Ciemny" [ref=e150]
+                    - generic [ref=e153]: Ciemny
+      - generic "Wikipedia:Strona główna" [ref=e154]:
+        - generic [ref=e157]:
+          - heading "Wstęp" [level=2] [ref=e158]
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - strong [ref=e163]:
+                  - text: Witaj w
+                  - link "Wikipedii" [ref=e164] [cursor=pointer]:
+                    - /url: /wiki/Wikipedia
+                  - text: ","
+                - generic [ref=e165]:
+                  - link "wolnej" [ref=e166] [cursor=pointer]:
+                    - /url: /wiki/Wolna_tre%C5%9B%C4%87
+                  - text: encyklopedii, którą
+                  - link "każdy może redagować" [ref=e167] [cursor=pointer]:
+                    - /url: /wiki/Pomoc:Pierwsze_kroki
+                  - text: .
+                  - link "1 681 554" [ref=e168] [cursor=pointer]:
+                    - /url: /wiki/Wikipedia:Liczba_artyku%C5%82%C3%B3w_w_polskoj%C4%99zycznej_Wikipedii
+                  - text: artykuły, w tym 5428
+                  - link "wyróżnionych" [ref=e169] [cursor=pointer]:
+                    - /url: /wiki/Wikipedia:Wyr%C3%B3%C5%BCniona_zawarto%C5%9B%C4%87_Wikipedii
+              - generic [ref=e170]:
+                - generic [ref=e171]:
+                  - link "Kategorie Wikipedii" [ref=e172] [cursor=pointer]:
+                    - /url: /wiki/Wikipedia:Kategorie_G%C5%82%C3%B3wne
+                  - text: ":"
+                - generic [ref=e173]:
+                  - link "Nauki ścisłe" [ref=e174] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Nauki_%C5%9Bcis%C5%82e
+                  - text: •
+                  - link "Nauki przyrodnicze" [ref=e175] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Nauki_przyrodnicze
+                  - text: •
+                  - link "Nauki społeczne" [ref=e176] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Nauki_spo%C5%82eczne
+                  - text: •
+                  - link "Nauki humanistyczne" [ref=e177] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Nauki_humanistyczne
+                  - text: •
+                  - link "Technika" [ref=e178] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Technika
+                  - text: •
+                  - link "Filozofia" [ref=e179] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Filozofia
+                  - text: •
+                  - link "Historia" [ref=e180] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Historia
+                  - text: •
+                  - link "Kultura" [ref=e181] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Kultura
+                  - text: •
+                  - link "Sztuka" [ref=e182] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Sztuka
+                  - text: •
+                  - link "Religioznawstwo" [ref=e183] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Religioznawstwo
+                  - text: •
+                  - link "Gospodarka" [ref=e184] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Gospodarka
+                  - text: •
+                  - link "Społeczeństwo" [ref=e185] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Spo%C5%82ecze%C5%84stwo
+                  - text: •
+                  - link "Sport" [ref=e186] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Sport
+                  - text: •
+                  - link "Polska" [ref=e187] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Polska
+                  - text: •
+                  - link "Biografie" [ref=e188] [cursor=pointer]:
+                    - /url: /wiki/Kategoria:Biografie
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic [ref=e192]:
+                  - heading "Czy wiesz…" [level=2] [ref=e193]: Czy wiesz…
+                  - paragraph [ref=e196]:
+                    - text: Z
+                    - link "nowych" [ref=e197] [cursor=pointer]:
+                      - /url: /wiki/Specjalna:Nowe_strony
+                    - text: "i ostatnio rozbudowanych artykułów w Wikipedii:"
+                  - figure [ref=e198]:
+                    - link [ref=e199] [cursor=pointer]:
+                      - /url: /wiki/Plik:Boletus_depilatus_2006_08.jpg
+                      - img [ref=e200]
+                  - paragraph [ref=e201]:
+                    - text: …dlaczego grzybiarze nie powinni zbierać
+                    - link "płowca pofałdowanego" [ref=e203] [cursor=pointer]:
+                      - /url: /wiki/P%C5%82owiec_pofa%C5%82dowany
+                    - text: "?"
+                    - generic [ref=e204]: (na zdjęciu)
+                  - paragraph [ref=e205]:
+                    - text: …co studiował polski sędzia piłkarski
+                    - link "Sebastian Krasny" [ref=e207] [cursor=pointer]:
+                      - /url: /wiki/Sebastian_Krasny
+                    - text: "?"
+                  - paragraph [ref=e208]:
+                    - text: …ile spotkań w barwach Irlandii Północnej rozegrał
+                    - link "Aaron Hughes" [ref=e210] [cursor=pointer]:
+                      - /url: /wiki/Aaron_Hughes
+                    - text: "?"
+                  - paragraph [ref=e211]:
+                    - text: …jak bardzo okazały jest
+                    - link "różnorożek okazały" [ref=e213] [cursor=pointer]:
+                      - /url: /wiki/R%C3%B3%C5%BCnoro%C5%BCek_okaza%C5%82y
+                    - text: ", największy różnorożkowaty świata?"
+                  - paragraph [ref=e214]:
+                    - text: …która
+                    - link "wytwórnia lotnicza" [ref=e216] [cursor=pointer]:
+                      - /url: /wiki/Bell_Aircraft_Corporation
+                    - text: zbudowała pierwszy w historii samolot ponaddźwiękowy?
+                  - paragraph [ref=e217]:
+                    - text: …że
+                    - link "pierwsza kobieta" [ref=e219] [cursor=pointer]:
+                      - /url: /wiki/Marie_Grace_Augustin
+                    - text: zasiadająca w parlamencie Saint Lucia prowadziła hotel oraz sklep spożywczy?
+                  - generic [ref=e221]:
+                    - link "Propozycje do ekspozycji" [ref=e222] [cursor=pointer]:
+                      - /url: /wiki/Wikiprojekt:Czy_wiesz/propozycje
+                    - text: •
+                    - link "Jak napisać nowy artykuł?" [ref=e223] [cursor=pointer]:
+                      - /url: /wiki/Pomoc:Jak_napisa%C4%87_nowy_artyku%C5%82
+                - generic [ref=e224]:
+                  - heading "Wydarzenia" [level=2] [ref=e225]: Wydarzenia
+                  - paragraph [ref=e228]:
+                    - link "Inwazja Rosji na Ukrainę" [ref=e230] [cursor=pointer]:
+                      - /url: /wiki/Inwazja_Rosji_na_Ukrain%C4%99
+                    - text: •
+                    - link "wojna Izraela z Hamasem" [ref=e232] [cursor=pointer]:
+                      - /url: /wiki/Wojna_Izraela_z_Hamasem
+                    - text: •
+                    - link "operacja „Absolute Resolve”" [ref=e234] [cursor=pointer]:
+                      - /url: /wiki/Operacja_%E2%80%9EAbsolute_Resolve%E2%80%9D
+                  - generic [ref=e235]:
+                    - link "Domen Prevc" [ref=e237] [cursor=pointer]:
+                      - /url: /wiki/Plik:Domen_Prevc_-_Planici_2024_(cropped).jpg
+                      - img "Domen Prevc" [ref=e238]
+                    - link "Domen Prevc" [ref=e240] [cursor=pointer]:
+                      - /url: /wiki/Domen_Prevc
+                  - list [ref=e241]:
+                    - listitem [ref=e242]:
+                      - text: Słoweniec
+                      - link "Domen Prevc" [ref=e244] [cursor=pointer]:
+                        - /url: /wiki/Domen_Prevc
+                      - generic [ref=e245]: (na zdjęciu)
+                      - text: zwyciężył w
+                      - link "74. Turnieju Czterech Skoczni" [ref=e247] [cursor=pointer]:
+                        - /url: /wiki/74._Turniej_Czterech_Skoczni
+                      - generic [ref=e248]:
+                        - text: (
+                        - link "6 stycznia" [ref=e249] [cursor=pointer]:
+                          - /url: /wiki/Stycze%C5%84_2026#6_stycznia
+                        - text: )
+                    - listitem [ref=e250]:
+                      - link "Delcy Rodríguez" [ref=e252] [cursor=pointer]:
+                        - /url: /wiki/Delcy_Rodr%C3%ADguez
+                      - text: została zaprzysiężona na urząd p.o.
+                      - link "prezydenta Wenezueli" [ref=e253] [cursor=pointer]:
+                        - /url: /wiki/Prezydenci_Wenezueli
+                      - text: ", przejmując obowiązki po aresztowanym"
+                      - link "Nicolásie Maduro" [ref=e254] [cursor=pointer]:
+                        - /url: /wiki/Nicol%C3%A1s_Maduro
+                      - generic [ref=e255]:
+                        - text: (
+                        - link "5 stycznia" [ref=e256] [cursor=pointer]:
+                          - /url: /wiki/Stycze%C5%84_2026#5_stycznia
+                        - text: )
+                    - listitem [ref=e257]:
+                      - text: W wyniku
+                      - link "pożaru w barze Le Constellation" [ref=e259] [cursor=pointer]:
+                        - /url: /wiki/Po%C5%BCar_baru_w_Crans-Montanie
+                      - text: w szwajcarskim kurorcie
+                      - link "Crans-Montana" [ref=e260] [cursor=pointer]:
+                        - /url: /wiki/Crans-Montana
+                      - text: zginęło 40 osób (
+                      - link "1 stycznia" [ref=e262] [cursor=pointer]:
+                        - /url: /wiki/Stycze%C5%84_2026#1_stycznia
+                      - text: )
+                    - listitem [ref=e263]:
+                      - text: "6 miejscowości w Polsce uzyskało status miasta:"
+                      - link "Janów Podlaski" [ref=e265] [cursor=pointer]:
+                        - /url: /wiki/Jan%C3%B3w_Podlaski
+                      - text: ","
+                      - link "Stanisławów" [ref=e267] [cursor=pointer]:
+                        - /url: /wiki/Stanis%C5%82aw%C3%B3w_(powiat_mi%C5%84ski)
+                      - text: ","
+                      - link "Małkinia Górna" [ref=e269] [cursor=pointer]:
+                        - /url: /wiki/Ma%C5%82kinia_G%C3%B3rna
+                      - text: ","
+                      - link "Staroźreby" [ref=e271] [cursor=pointer]:
+                        - /url: /wiki/Staro%C5%BAreby
+                      - text: ","
+                      - link "Branice" [ref=e273] [cursor=pointer]:
+                        - /url: /wiki/Branice
+                      - text: i
+                      - link "Janów" [ref=e275] [cursor=pointer]:
+                        - /url: /wiki/Jan%C3%B3w_(wojew%C3%B3dztwo_%C5%9Bl%C4%85skie)
+                      - generic [ref=e276]:
+                        - text: (
+                        - link "1 stycznia" [ref=e277] [cursor=pointer]:
+                          - /url: /wiki/Stycze%C5%84_2026#1_stycznia
+                        - text: )
+                  - paragraph [ref=e278]:
+                    - link "Zmarli" [ref=e280] [cursor=pointer]:
+                      - /url: /wiki/Zmarli_w_styczniu_2026
+                    - text: ":"
+                    - link "Luisa Diogo" [ref=e281] [cursor=pointer]:
+                      - /url: /wiki/Luisa_Diogo
+                    - text: •
+                    - link "Scott Adams" [ref=e282] [cursor=pointer]:
+                      - /url: /wiki/Scott_Adams
+                    - text: •
+                    - link "Jorgos Wasiliu" [ref=e283] [cursor=pointer]:
+                      - /url: /wiki/Jorgos_Wasiliu
+                    - text: •
+                    - link "Ueli Kestenholz" [ref=e284] [cursor=pointer]:
+                      - /url: /wiki/Ueli_Kestenholz
+                    - text: •
+                    - link "Mucharbij Kirżynow" [ref=e285] [cursor=pointer]:
+                      - /url: /wiki/Mucharbij_Kir%C5%BCynow
+                    - text: •
+                    - link "Erich von Däniken" [ref=e286] [cursor=pointer]:
+                      - /url: /wiki/Erich_von_D%C3%A4niken
+                    - text: •
+                    - link "Bob Weir" [ref=e287] [cursor=pointer]:
+                      - /url: /wiki/Bob_Weir
+                    - text: •
+                    - link "Louis Brus" [ref=e288] [cursor=pointer]:
+                      - /url: /wiki/Louis_Brus
+                    - text: •
+                    - link "Uļjana Semjonova" [ref=e289] [cursor=pointer]:
+                      - /url: /wiki/U%C4%BCjana_Semjonova
+                    - text: •
+                    - link "Terry Yorath" [ref=e290] [cursor=pointer]:
+                      - /url: /wiki/Terry_Yorath
+                    - text: •
+                    - link "Béla Tarr" [ref=e291] [cursor=pointer]:
+                      - /url: /wiki/B%C3%A9la_Tarr
+                    - text: •
+                    - link "Ali Abu ar-Raghib" [ref=e292] [cursor=pointer]:
+                      - /url: /wiki/Ali_Abu_ar-Raghib
+                  - link "Więcej…" [ref=e295] [cursor=pointer]:
+                    - /url: /wiki/Portal:Aktualno%C5%9Bci
+                - generic [ref=e296]:
+                  - heading "Rocznice" [level=2] [ref=e297]: Rocznice
+                  - paragraph [ref=e300]:
+                    - link "17 stycznia" [ref=e302] [cursor=pointer]:
+                      - /url: /wiki/17_stycznia
+                    - text: ":"
+                    - link "imieniny" [ref=e303] [cursor=pointer]:
+                      - /url: /wiki/Imieniny
+                    - text: "obchodzą m.in.:"
+                    - link "Antoni" [ref=e304] [cursor=pointer]:
+                      - /url: /wiki/Antoni_(imi%C4%99)
+                    - text: ","
+                    - link "Rosława" [ref=e305] [cursor=pointer]:
+                      - /url: /wiki/Ros%C5%82awa
+                    - text: i
+                    - link "Rościsław" [ref=e306] [cursor=pointer]:
+                      - /url: /wiki/Ro%C5%9Bcis%C5%82aw_(imi%C4%99)
+                    - text: "Okrągłe, dziesięcioletnie rocznice:"
+                  - generic [ref=e307]:
+                    - link "Benjamin Franklin" [ref=e309] [cursor=pointer]:
+                      - /url: /wiki/Plik:Benjamin_Franklin_by_Jean-Baptiste_Greuze.jpg
+                      - img "Benjamin Franklin" [ref=e310]
+                    - link "Benjamin Franklin" [ref=e312] [cursor=pointer]:
+                      - /url: https://commons.wikimedia.org/wiki/File:Benjamin_Franklin_by_Jean-Baptiste_Greuze.jpg
+                  - generic [ref=e313]:
+                    - link "sala obrad Rady Bezpieczeństwa" [ref=e315] [cursor=pointer]:
+                      - /url: /wiki/Plik:United_Nations_Security_Council.jpg
+                      - img "sala obrad Rady Bezpieczeństwa" [ref=e316]
+                    - link "sala obrad Rady Bezpieczeństwa" [ref=e318] [cursor=pointer]:
+                      - /url: https://commons.wikimedia.org/wiki/File:United_Nations_Security_Council.jpg
+                  - list [ref=e319]:
+                    - listitem [ref=e320]:
+                      - link "1706" [ref=e321] [cursor=pointer]:
+                        - /url: /wiki/1706
+                      - text: – urodził się amerykański polityk i mąż stanu
+                      - link "Benjamin Franklin" [ref=e323] [cursor=pointer]:
+                        - /url: /wiki/Benjamin_Franklin
+                      - generic [ref=e324]: (na portrecie)
+                      - text: ", jeden z"
+                      - link "ojców-założycieli Stanów Zjednoczonych" [ref=e325] [cursor=pointer]:
+                        - /url: /wiki/Ojcowie_za%C5%82o%C5%BCyciele_Stan%C3%B3w_Zjednoczonych
+                      - text: ", a także drukarz, publicysta, filozof, fizyk, wynalazca"
+                    - listitem [ref=e326]:
+                      - link "1786" [ref=e327] [cursor=pointer]:
+                        - /url: /wiki/1786
+                      - text: –
+                      - link "Pierre Méchain" [ref=e328] [cursor=pointer]:
+                        - /url: /wiki/Pierre_M%C3%A9chain
+                      - text: dostrzegł
+                      - link "kometę" [ref=e330] [cursor=pointer]:
+                        - /url: /wiki/Kometa_Enckego
+                      - text: ", nazwaną późnej imieniem"
+                      - link "Enckego" [ref=e331] [cursor=pointer]:
+                        - /url: /wiki/Johann_Franz_Encke
+                      - text: (który ustalił jej orbitę)
+                    - listitem [ref=e332]:
+                      - link "1946" [ref=e333] [cursor=pointer]:
+                        - /url: /wiki/1946
+                      - text: – po przerwie spowodowanej wojną swoje drzwi dla widzów na nowo otworzył
+                      - link "Teatr Polski" [ref=e335] [cursor=pointer]:
+                        - /url: /wiki/Teatr_Polski_im._Arnolda_Szyfmana_w_Warszawie
+                      - text: w
+                      - link "Warszawie" [ref=e336] [cursor=pointer]:
+                        - /url: /wiki/Warszawa
+                      - text: ; tegoż dnia w
+                      - link "Londynie" [ref=e337] [cursor=pointer]:
+                        - /url: /wiki/Londyn
+                      - text: po raz pierwszy zebrała się
+                      - link "Rada Bezpieczeństwa ONZ" [ref=e339] [cursor=pointer]:
+                        - /url: /wiki/Rada_Bezpiecze%C5%84stwa_Organizacji_Narod%C3%B3w_Zjednoczonych
+                      - generic [ref=e340]: (na fotografii sala obrad Rady Bezpieczeństwa)
+                    - listitem [ref=e341]:
+                      - link "1966" [ref=e342] [cursor=pointer]:
+                        - /url: /wiki/1966
+                      - text: – dokonano uroczystego otwarcia muzeum w
+                      - link "dworku Jana Matejki w Krzesławicach" [ref=e344] [cursor=pointer]:
+                        - /url: /wiki/Dworek_Jana_Matejki_w_Krzes%C5%82awicach
+                      - text: ; tegoż dnia
+                      - link "zderzenie dwóch amerykańskich samolotów wojskowych" [ref=e346] [cursor=pointer]:
+                        - /url: /wiki/Katastrofa_lotnicza_pod_Palomares
+                      - text: – bombowca
+                      - link "B-52" [ref=e347] [cursor=pointer]:
+                        - /url: /wiki/Boeing_B-52_Stratofortress
+                      - text: i
+                      - link "tankowca" [ref=e348] [cursor=pointer]:
+                        - /url: /wiki/Tankowiec_powietrzny
+                      - text: typu
+                      - link "KC-135" [ref=e349] [cursor=pointer]:
+                        - /url: /wiki/Boeing_KC-135_Stratotanker
+                      - text: – w pobliżu hiszpańskiej wioski
+                      - link "Palomares" [ref=e350] [cursor=pointer]:
+                        - /url: /wiki/Palomares_del_Rio
+                      - text: ; w wyniku kolizji z bombowca wypadły cztery
+                      - link "bomby termojądrowe" [ref=e351] [cursor=pointer]:
+                        - /url: /wiki/%C5%81adunek_termoj%C4%85drowy
+                      - generic [ref=e353]:
+                        - link "16 stycznia" [ref=e354] [cursor=pointer]:
+                          - /url: /wiki/16_stycznia
+                        - text: •
+                        - link "Kalendarium dzień po dniu" [ref=e355] [cursor=pointer]:
+                          - /url: /wiki/Kalendarium_dzie%C5%84_po_dniu
+                        - text: •
+                        - link "18 stycznia" [ref=e356] [cursor=pointer]:
+                          - /url: /wiki/18_stycznia
+              - generic [ref=e357]:
+                - generic [ref=e358]:
+                  - heading "Artykuł na medal" [level=2] [ref=e359]: Artykuł na medal
+                  - figure [ref=e362]:
+                    - link [ref=e363] [cursor=pointer]:
+                      - /url: /wiki/Plik:Chelmno-fosse-commune.jpg
+                      - img [ref=e364]
+                  - paragraph [ref=e365]:
+                    - link "Obóz zagłady w Chełmnie nad Nerem" [ref=e367] [cursor=pointer]:
+                      - /url: /wiki/Ob%C3%B3z_zag%C5%82ady_w_Che%C5%82mnie_nad_Nerem
+                    - text: –
+                    - link "niemiecki" [ref=e368] [cursor=pointer]:
+                      - /url: /wiki/III_Rzesza
+                    - link "nazistowski" [ref=e369] [cursor=pointer]:
+                      - /url: /wiki/Nazizm
+                    - link "obóz zagłady" [ref=e370] [cursor=pointer]:
+                      - /url: /wiki/Ob%C3%B3z_zag%C5%82ady
+                    - text: funkcjonujący od grudnia 1941 roku do kwietnia 1943 roku oraz ponownie od kwietnia 1944 roku do stycznia 1945 roku we wsi
+                    - link "Chełmno nad Nerem" [ref=e371] [cursor=pointer]:
+                      - /url: /wiki/Che%C5%82mno_(powiat_kolski)
+                    - text: w
+                    - link "gminie Dąbie" [ref=e372] [cursor=pointer]:
+                      - /url: /wiki/D%C4%85bie_(gmina_w_wojew%C3%B3dztwie_wielkopolskim)
+                    - text: w
+                    - link "powiecie kolskim" [ref=e373] [cursor=pointer]:
+                      - /url: /wiki/Powiat_kolski
+                    - text: . Obóz w Chełmnie nad Nerem był pierwszym niemieckim obozem zagłady; został utworzony jeszcze przed
+                    - link "konferencją z Wannsee" [ref=e374] [cursor=pointer]:
+                      - /url: /wiki/Konferencja_w_Wannsee
+                    - text: i formalnym rozpoczęciem
+                    - link "akcji „Reinhardt”" [ref=e375] [cursor=pointer]:
+                      - /url: /wiki/Einsatz_Reinhardt
+                    - text: . Prowadzono w nim
+                    - link "eksterminację ludności żydowskiej" [ref=e376] [cursor=pointer]:
+                      - /url: /wiki/Zag%C5%82ada_%C5%BByd%C3%B3w
+                    - text: . Niemcy kierowali do niego przede wszystkim transporty z
+                    - link "gett" [ref=e377] [cursor=pointer]:
+                      - /url: /wiki/Getto_%C5%BCydowskie
+                    - text: w
+                    - link "Kraju Warty" [ref=e378] [cursor=pointer]:
+                      - /url: /wiki/Kraj_Warty
+                    - text: ", w tym z"
+                    - link "getta łódzkiego" [ref=e379] [cursor=pointer]:
+                      - /url: /wiki/Getto_%C5%82%C3%B3dzkie
+                    - text: . Ponadto w Chełmnie mordowano
+                    - link "Romów" [ref=e380] [cursor=pointer]:
+                      - /url: /wiki/Romowie
+                    - text: oraz
+                    - link "Sinti" [ref=e381] [cursor=pointer]:
+                      - /url: /wiki/Sinti
+                    - text: . Ofiary zabijano w
+                    - link "mobilnych komorach gazowych" [ref=e382] [cursor=pointer]:
+                      - /url: /wiki/Mobilna_komora_gazowa
+                    - text: przy użyciu
+                    - link "gazów spalinowych" [ref=e383] [cursor=pointer]:
+                      - /url: /wiki/Spaliny
+                    - text: . Według niektórych relacji w obozie rozstrzelano pojedyncze grupy
+                    - link "Polaków" [ref=e384] [cursor=pointer]:
+                      - /url: /wiki/Polacy
+                    - text: i
+                    - link "jeńców sowieckich" [ref=e385] [cursor=pointer]:
+                      - /url: /wiki/Je%C5%84cy_sowieccy_w_niewoli_niemieckiej_(1941%E2%80%931945)
+                    - text: . Liczba ofiar obozu w Chełmnie nad Nerem sięgnęła prawdopodobnie ok. 200 tys. osób. Nie jest znana liczba osób, którym udało się przeżyć pobyt w obozie, znane są personalia jedynie sześciu więźniów, którym udało się z niego zbiec i przeżyć wojnę.
+                    - link "Czytaj więcej…" [ref=e387] [cursor=pointer]:
+                      - /url: /wiki/Ob%C3%B3z_zag%C5%82ady_w_Che%C5%82mnie_nad_Nerem
+                  - generic [ref=e389]:
+                    - text: Inne
+                    - link "Artykuły na Medal" [ref=e390] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Artyku%C5%82y_na_Medal
+                    - text: i
+                    - link "Listy na Medal" [ref=e391] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Listy_na_Medal
+                    - text: •
+                    - link "Jak napisać doskonały artykuł?" [ref=e392] [cursor=pointer]:
+                      - /url: /wiki/Pomoc:Jak_napisa%C4%87_doskona%C5%82y_artyku%C5%82
+                - generic [ref=e393]:
+                  - heading "Dobry artykuł" [level=2] [ref=e394]: Dobry artykuł
+                  - figure [ref=e397]:
+                    - link [ref=e398] [cursor=pointer]:
+                      - /url: /wiki/Plik:German_submarine_U-660_underway_in_the_Mediterranean_Sea,_12_November_1942_(IWM_AX70A).jpg
+                      - img [ref=e399]
+                  - paragraph [ref=e400]:
+                    - link "U-569" [ref=e402] [cursor=pointer]:
+                      - /url: /wiki/U-569
+                    - text: –
+                    - link "niemiecki" [ref=e403] [cursor=pointer]:
+                      - /url: /wiki/III_Rzesza
+                    - link "okręt podwodny" [ref=e404] [cursor=pointer]:
+                      - /url: /wiki/Okr%C4%99t_podwodny
+                    - text: typu
+                    - link "VIIC" [ref=e406] [cursor=pointer]:
+                      - /url: /wiki/Okr%C4%99ty_podwodne_typu_VIIC
+                    - text: z okresu
+                    - link "II wojny światowej" [ref=e407] [cursor=pointer]:
+                      - /url: /wiki/II_wojna_%C5%9Bwiatowa
+                    - text: .
+                    - link "Wyporność" [ref=e408] [cursor=pointer]:
+                      - /url: /wiki/Wyporno%C5%9B%C4%87
+                    - text: U-Boota wynosiła 769
+                    - link "ton" [ref=e409] [cursor=pointer]:
+                      - /url: /wiki/Tona
+                    - text: w położeniu nawodnym i 871 ton pod wodą, a jego główną bronią było 14
+                    - link "torped" [ref=e410] [cursor=pointer]:
+                      - /url: /wiki/Torpeda
+                    - text: o
+                    - link "kalibrze" [ref=e411] [cursor=pointer]:
+                      - /url: /wiki/Kaliber_(bro%C5%84)
+                    - text: 533 mm, wystrzeliwanych z pięciu wewnętrznych
+                    - link "wyrzutni" [ref=e412] [cursor=pointer]:
+                      - /url: /wiki/Wyrzutnia_torpedowa
+                    - text: . Jednostka rozwijała na powierzchni maksymalną prędkość 17,6
+                    - link "węzła" [ref=e413] [cursor=pointer]:
+                      - /url: /wiki/W%C4%99ze%C5%82_(jednostka_pr%C4%99dko%C5%9Bci)
+                    - text: ", jej zasięg przy prędkości 10 węzłów wynosił 8500"
+                    - link "Mm" [ref=e414] [cursor=pointer]:
+                      - /url: /wiki/Mila_morska
+                    - text: . Okręt został
+                    - link "zwodowany" [ref=e415] [cursor=pointer]:
+                      - /url: /wiki/Wodowanie
+                    - text: w marcu 1941 roku w stoczni
+                    - link "Blohm & Voss" [ref=e416] [cursor=pointer]:
+                      - /url: /wiki/Blohm_%2B_Voss
+                    - text: w
+                    - link "Hamburgu" [ref=e417] [cursor=pointer]:
+                      - /url: /wiki/Hamburg
+                    - text: ", a w maju 1941 roku wcielono go do służby w"
+                    - link "Kriegsmarine" [ref=e418] [cursor=pointer]:
+                      - /url: /wiki/Kriegsmarine
+                    - text: . Pływając w składzie 3. Flotylli U-Bootów U-569 odbył dziewięć patroli bojowych, podczas których zatopił jeden statek o
+                    - link "pojemności" [ref=e419] [cursor=pointer]:
+                      - /url: /wiki/Pojemno%C5%9B%C4%87_brutto
+                    - text: "984"
+                    - link "BRT" [ref=e420] [cursor=pointer]:
+                      - /url: /wiki/Tona_rejestrowa
+                    - text: oraz uszkodził jeden statek o pojemności 4458 BRT. U-Boot został
+                    - link "samozatopiony" [ref=e421] [cursor=pointer]:
+                      - /url: /wiki/Samozatopienie
+                    - text: 22 maja 1943 roku na wschód od
+                    - link "Nowej Fundlandii" [ref=e422] [cursor=pointer]:
+                      - /url: /wiki/Nowa_Fundlandia
+                    - text: ", po ciężkim uszkodzeniu"
+                    - link "bombami głębinowymi" [ref=e423] [cursor=pointer]:
+                      - /url: /wiki/Bomba_g%C5%82%C4%99binowa
+                    - text: przez amerykańskie samoloty z lotniskowca eskortowego
+                    - link "USS „Bogue” (CVE-9)" [ref=e424] [cursor=pointer]:
+                      - /url: /wiki/USS_Bogue_(CVE-9)
+                    - text: .
+                    - link "Czytaj więcej…" [ref=e426] [cursor=pointer]:
+                      - /url: /wiki/U-569
+                  - generic [ref=e428]:
+                    - link "Inne Dobre Artykuły" [ref=e429] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Dobre_Artyku%C5%82y
+                    - text: •
+                    - link "Jak pisać w stylu encyklopedycznym?" [ref=e430] [cursor=pointer]:
+                      - /url: /wiki/Pomoc:Styl_%E2%80%93_poradnik_dla_autor%C3%B3w
+                - generic [ref=e431]:
+                  - heading "Ilustracja na medal" [level=2] [ref=e432]: Ilustracja na medal
+                  - generic [ref=e435]:
+                    - link [ref=e437] [cursor=pointer]:
+                      - /url: /wiki/Plik:2023_Czarny_proch_Vesuvit_LC_(3).jpg
+                      - img [ref=e438]
+                    - generic [ref=e439]:
+                      - link "Czarny proch" [ref=e440] [cursor=pointer]:
+                        - /url: /wiki/Proch_czarny
+                      - text: o granulacji 0,5 mm–0,8 mm
+                  - generic [ref=e442]:
+                    - link "Inne Ilustracje na Medal" [ref=e443] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Ilustracje_na_Medal
+                    - text: •
+                    - link "Jak zilustrować artykuł?" [ref=e444] [cursor=pointer]:
+                      - /url: /wiki/Pomoc:Ilustrowanie
+            - generic [ref=e445]:
+              - generic [ref=e446]:
+                - heading "Siostrzane projekty Wikipedii" [level=2] [ref=e447]: Siostrzane projekty Wikipedii
+                - list [ref=e452]:
+                  - listitem [ref=e453]:
+                    - img [ref=e457]
+                    - paragraph [ref=e458]:
+                      - link "Wikiźródła" [ref=e459] [cursor=pointer]:
+                        - /url: https://pl.wikisource.org/wiki/
+                      - text: Wolna biblioteka
+                  - listitem [ref=e460]:
+                    - img [ref=e464]
+                    - paragraph [ref=e465]:
+                      - link "Wikisłownik" [ref=e466] [cursor=pointer]:
+                        - /url: https://pl.wiktionary.org/wiki/
+                      - text: Wielojęzyczny słownik
+                  - listitem [ref=e467]:
+                    - img [ref=e471]
+                    - paragraph [ref=e472]:
+                      - link "Commons" [ref=e473] [cursor=pointer]:
+                        - /url: https://commons.wikimedia.org/wiki/Strona_g%C5%82%C3%B3wna
+                      - text: Repozytorium mediów
+                  - listitem [ref=e474]:
+                    - img [ref=e478]
+                    - paragraph [ref=e479]:
+                      - link "Wikidane" [ref=e480] [cursor=pointer]:
+                        - /url: https://www.wikidata.org/wiki/
+                      - text: Repozytorium danych
+                  - listitem [ref=e481]:
+                    - img [ref=e485]
+                    - paragraph [ref=e486]:
+                      - link "Wikinews" [ref=e487] [cursor=pointer]:
+                        - /url: https://pl.wikinews.org/wiki/
+                      - text: Serwis informacyjny
+                  - listitem [ref=e488]:
+                    - img [ref=e492]
+                    - paragraph [ref=e493]:
+                      - link "Wikispecies" [ref=e494] [cursor=pointer]:
+                        - /url: https://species.wikimedia.org/wiki/Strona_g%C5%82%C3%B3wna
+                      - text: Katalog gatunków
+                  - listitem [ref=e495]:
+                    - img [ref=e499]
+                    - paragraph [ref=e500]:
+                      - link "Wikibooks" [ref=e501] [cursor=pointer]:
+                        - /url: https://pl.wikibooks.org/wiki/
+                      - text: Wolne podręczniki
+                  - listitem [ref=e502]:
+                    - img [ref=e506]
+                    - paragraph [ref=e507]:
+                      - link "Wikicytaty" [ref=e508] [cursor=pointer]:
+                        - /url: https://pl.wikiquote.org/wiki/
+                      - text: Kolekcja cytatów
+                  - listitem [ref=e509]:
+                    - img [ref=e513]
+                    - paragraph [ref=e514]:
+                      - link "Wikipodróże" [ref=e515] [cursor=pointer]:
+                        - /url: https://pl.wikivoyage.org/wiki/
+                      - text: Informacje turystyczne
+                  - listitem [ref=e516]:
+                    - img [ref=e520]
+                    - paragraph [ref=e521]:
+                      - link "Wikiwersytet" [ref=e522] [cursor=pointer]:
+                        - /url: https://beta.wikiversity.org/wiki/Strona_G%C5%82%C3%B3wna
+                      - text: Wolna edukacja
+                  - listitem [ref=e523]:
+                    - img [ref=e527]
+                    - paragraph [ref=e528]:
+                      - link "Wikifunkcje" [ref=e529] [cursor=pointer]:
+                        - /url: https://www.wikifunctions.org/wiki/
+                      - text: Wolna biblioteka funkcji
+              - generic [ref=e530]:
+                - heading "Organizacja i promocja Wikimediów" [level=2] [ref=e531]: Organizacja i promocja Wikimediów
+                - generic [ref=e535]:
+                  - list [ref=e536]:
+                    - listitem [ref=e537]:
+                      - img [ref=e541]
+                      - paragraph [ref=e542]:
+                        - link "Wikimedia Foundation" [ref=e543] [cursor=pointer]:
+                          - /url: https://wikimediafoundation.org/
+                        - text: Ponosi prawną i techniczną odpowiedzialność za Wikipedię.
+                    - listitem [ref=e544]:
+                      - img [ref=e548]
+                      - paragraph [ref=e549]:
+                        - link "Wikimedia Polska" [ref=e550] [cursor=pointer]:
+                          - /url: https://wikimedia.pl
+                        - text: Promocja polskich projektów Wikimedia
+                    - listitem [ref=e551]:
+                      - img [ref=e555]
+                      - paragraph [ref=e556]:
+                        - link "Meta-Wiki" [ref=e557] [cursor=pointer]:
+                          - /url: https://meta.wikimedia.org/wiki/Strona_g%C5%82%C3%B3wna
+                        - text: Koordynacja projektów Wikimedia
+                  - paragraph [ref=e559]:
+                    - text: Jeżeli jesteś nowym użytkownikiem Wikipedii, możesz znaleźć pomoc u innych członków
+                    - link "społeczności" [ref=e560] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Spo%C5%82eczno%C5%9B%C4%87_wikipedyst%C3%B3w
+                    - text: ", m.in. u"
+                    - link "przewodników" [ref=e561] [cursor=pointer]:
+                      - /url: /wiki/Pomoc:Przewodnicy
+                    - text: czy
+                    - link "administratorów" [ref=e562] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Administratorzy
+                    - text: . Poznaj też inne formy
+                    - link "kontaktu z wikipedystami" [ref=e563] [cursor=pointer]:
+                      - /url: /wiki/Wikipedia:Kontakt_z_wikipedystami
+                    - text: .
+            - paragraph [ref=e566]:
+              - text: "Zobacz też:"
+              - link "Strona główna z wczoraj" [ref=e567] [cursor=pointer]:
+                - /url: /wiki/Wikipedia:Strona_g%C5%82%C3%B3wna/Wczoraj
+              - text: •
+              - link "Strona główna na jutro" [ref=e568] [cursor=pointer]:
+                - /url: /wiki/Wikipedia:Strona_g%C5%82%C3%B3wna/Jutro
+              - text: •
+              - link "Dokumentacja" [ref=e569] [cursor=pointer]:
+                - /url: /wiki/Wikipedia:Strona_g%C5%82%C3%B3wna/Dokumentacja
+    - contentinfo [ref=e571]:
+      - list [ref=e572]:
+        - listitem [ref=e573]: Tę stronę ostatnio edytowano 26 paź 2025, 00:13.
+        - listitem [ref=e574]:
+          - text: Tekst udostępniany na licencji
+          - 'link "Creative Commons: uznanie autorstwa, na tych samych warunkach" [ref=e575] [cursor=pointer]':
+            - /url: https://creativecommons.org/licenses/by-sa/4.0/deed.pl
+          - text: ", z możliwością obowiązywania dodatkowych ograniczeń. Zobacz szczegółowe informacje o"
+          - link "warunkach korzystania" [ref=e576] [cursor=pointer]:
+            - /url: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/pl
+          - text: .
+      - list:
+        - listitem [ref=e577]:
+          - link "Polityka prywatności" [ref=e578] [cursor=pointer]:
+            - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy
+        - listitem [ref=e579]:
+          - link "O Wikipedii" [ref=e580] [cursor=pointer]:
+            - /url: /wiki/Wikipedia:O_Wikipedii
+        - listitem [ref=e581]:
+          - link "Korzystasz z Wikipedii tylko na własną odpowiedzialność" [ref=e582] [cursor=pointer]:
+            - /url: /wiki/Wikipedia:Korzystasz_z_Wikipedii_tylko_na_w%C5%82asn%C4%85_odpowiedzialno%C5%9B%C4%87
+        - listitem [ref=e583]:
+          - link "Kontakty prawne i dotyczące bezpieczeństwa" [ref=e584] [cursor=pointer]:
+            - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Legal:Wikimedia_Foundation_Legal_and_Safety_Contact_Information
+        - listitem [ref=e585]:
+          - link "Powszechne Zasady Postępowania" [ref=e586] [cursor=pointer]:
+            - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct
+        - listitem [ref=e587]:
+          - link "Dla deweloperów" [ref=e588] [cursor=pointer]:
+            - /url: https://developer.wikimedia.org
+        - listitem [ref=e589]:
+          - link "Statystyki" [ref=e590] [cursor=pointer]:
+            - /url: https://stats.wikimedia.org/#/pl.wikipedia.org
+        - listitem [ref=e591]:
+          - link "Oświadczenie o ciasteczkach" [ref=e592] [cursor=pointer]:
+            - /url: https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement
+        - listitem [ref=e593]:
+          - link "Wersja mobilna" [ref=e594] [cursor=pointer]:
+            - /url: //pl.wikipedia.org/w/index.php?title=Wikipedia:Strona_g%C5%82%C3%B3wna&mobileaction=toggle_view_mobile
+      - list [ref=e595]:
+        - listitem [ref=e596]:
+          - link "Wikimedia Foundation" [ref=e597] [cursor=pointer]:
+            - /url: https://www.wikimedia.org/
+            - img "Wikimedia Foundation" [ref=e599]
+        - listitem [ref=e600]:
+          - link "Powered by MediaWiki" [ref=e601] [cursor=pointer]:
+            - /url: https://www.mediawiki.org/
+            - img "Powered by MediaWiki" [ref=e603]
+  - generic [ref=e604]:
+    - list
+  - generic [ref=e605]:
+    - link:
+      - /url: "#"
+```

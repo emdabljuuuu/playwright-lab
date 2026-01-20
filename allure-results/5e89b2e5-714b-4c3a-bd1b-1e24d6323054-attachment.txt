@@ -1,0 +1,11 @@
+[STEP START] createDefaultUser with []
+[STEP STOP] createDefaultUser
+[STEP START] verifyUserInDb with [
+  {
+    id: 11,
+    name: 'Savanah',
+    username: 'Klein',
+    email: 'Herminia_Bins71@yahoo.com',
+    address: { street: 'Kling Route', city: 'Considineboro' }
+  }
+]

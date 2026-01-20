@@ -4,99 +4,55 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+
 jobs:
-  test-in-parallel:
+  test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        shardIndex: [1, 2, 3]
-        shardTotal: [3]
+    
+    # 🔥 TO JEST KLUCZOWE: Stawiamy bazę danych w CI
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_PASSWORD: mysecretpassword
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        # Healthcheck czeka, aż baza wstanie, zanim ruszą testy
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
     - uses: actions/checkout@v4
+    
     - uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: lts/*
+
     - name: Install dependencies
-      run: npm ci
+      run: npm ci  # 'ci' jest lepsze niż 'install' w CI/CD
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      # To wygeneruje folder 'blob-report' z dziwnymi plikami w środku
-      run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      # Tutaj mapujemy Sekrety z GitHuba na zmienne środowiskowe kontenera
+      env:
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_HOST: localhost # W GitHub Actions service jest dostępny na localhost
+        BASE_URL: ${{ secrets.BASE_URL }}
+      run: npx playwright test
 
-    - name: Upload blob report to GitHub Actions Artifacts
-      # Wysyłamy wyniki do "chmury tymczasowej" GitHuba
+    - name: Upload Report
       if: always() # Wykonaj nawet jak testy padną!
       uses: actions/upload-artifact@v4
       with:
-        # Nadajemy unikalną nazwę dla każdego kawałka (np. blob-report-1, blob-report-2)
-        name: blob-report-${{ matrix.shardIndex }}
-        path: blob-report
-        retention-days: 1
-
-  # --- NOWE ZADANIE: SPRZĄTACZ ---
-  merge-reports: 
-    # To zadanie ruszy DOPIERO jak wszystkie shardy skończą (sukcesem lub porażką)
-    if: always() 
-    needs: [test-in-parallel]
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Download blob reports from GitHub Actions Artifacts
-      # Pobieramy wszystkie paczki, które zaczynają się od 'blob-report'
-      uses: actions/download-artifact@v4
-      with:
-        pattern: blob-report-*
-        merge-multiple: true
-        path: all-blob-reports
-
-    - name: Merge into HTML Report
-      # Magiczna komenda Playwrighta
-      run: npx playwright merge-reports --reporter html ./all-blob-reports
-
-    - name: Upload Final HTML Report
-      # Wysyłamy gotowy, sklejony raport HTML, żebyś mógł go pobrać
-      uses: actions/upload-artifact@v4
-      with:
-        name: html-report--attempt-${{ github.run_attempt }}
-        path: playwright-report
-        retention-days: 14
-        
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-
-    - name: Upload artifact for Pages
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: playwright-report # Folder z HTMLem
-
-    # ZMIANA 2: Wrzucamy na serwer
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-    
-    - name: Send Slack Notification
-      if: always() 
-      # Wyślij nawet jak testy padły (a zwłaszcza wtedy!)
-      uses: ravsamhq/notify-slack-action@v2
-      with:
-        status: ${{ job.status }} # Sukces czy Porażka?
-        notify_when: 'failure,success'
-        notification_title: 'Raport Testów Automatycznych (Playwright)'
-        message_format: '{emoji} *{workflow}* {status_message} w {duration_format}. <{repo_url}|Zobacz Kod> lub <https://emdabljuuuu.github.io/playwright-lab/|👉 ZOBACZ RAPORT ONLINE>'
-        footer: 'Zbudowano przez GitHub Actions'
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
