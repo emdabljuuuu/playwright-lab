@@ -4,7 +4,12 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-
+  schedule:
+    # Składnia crona: minuta godzina dzień miesiąc dzień_tygodnia
+    # '0 2 * * *' oznacza: codziennie o 2:00 w nocy UTC
+    - cron: '0 2 * * *'
+  # Opcjonalnie: pozwala odpalić ręcznie guzik w GitHubie
+  workflow_dispatch:  
 jobs:
   test:
     timeout-minutes: 60
