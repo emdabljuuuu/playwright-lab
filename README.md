@@ -1,0 +1,1 @@
+[![Playwright Tests](https://github.com/emdabljuuuu/playwright-lab/actions/workflows/playwright.yml/badge.svg)](https://github.com/emdabljuuuu/playwright-lab/actions/workflows/playwright.yml)

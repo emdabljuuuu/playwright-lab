@@ -14,7 +14,6 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    
     # 🔥 TO JEST KLUCZOWE: Stawiamy bazę danych w CI
     services:
       postgres:
