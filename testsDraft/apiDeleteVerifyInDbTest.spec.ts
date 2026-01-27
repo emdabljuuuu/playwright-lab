@@ -1,4 +1,4 @@
-import { test } from './my-test';
+import { test } from '../tests/my-test';
 
 const userId = 1;
 const userEmail = 'Sinceraae@april.biz';

@@ -1,4 +1,4 @@
-import { test } from './my-test'; // Twój customowy test z Fixture
+import { test } from '../tests/my-test'; // Twój customowy test z Fixture
 import { searchScenarios } from '../test-data/search.data';
 
 // PĘTLA GENERUJĄCA TESTY

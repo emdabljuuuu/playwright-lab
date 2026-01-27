@@ -1,0 +1,33 @@
+name: k6 Performance Tests
+on:
+  # Pozwala na ręczne uruchomienie z guzika w GitHub
+  workflow_dispatch:
+    inputs:
+      vus:
+        description: 'Liczba wirtualnych użytkowników (VUs)'
+        required: true
+        default: '10'
+  # Opcjonalnie: Uruchamiaj co noc o 4:00
+  schedule:
+    - cron: '0 4 * * *'
+
+jobs:
+  performance_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run k6 Cloud Test
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: performance/main.js
+          # Przekazujemy zmienną VUS z inputu (lub domyślnie 10 dla crona)
+          flags: --env VUS=${{ inputs.vus || 10 }}
+
+      - name: Upload HTML Report
+        if: always() # Zapisz raport nawet jak testy padną (przekroczone progi)
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-report
+          path: summary.html
