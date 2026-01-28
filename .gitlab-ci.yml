@@ -45,7 +45,9 @@ playwright-job:
 
   # 6. Cache (przyspieszamy npm install)
   cache:
-    key: ${CI_COMMIT_REF_SLUG}
+    key: 
+      files:
+        - package-lock.json # Cache unieważnia się TYLKO gdy zmieni się ten plik
     paths:
       - .npm/
 
