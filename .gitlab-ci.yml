@@ -5,6 +5,7 @@ image: mcr.microsoft.com/playwright:v1.50.0-jammy
 # 2. Definiujemy etapy (Stages)
 stages:
   - test
+  - deploy
 
 # 3. Definiujemy Joba "e2e-tests"
 playwright-job:
@@ -67,3 +68,19 @@ playwright-job:
     # 🔥 MAGIA DZIEJE SIĘ TUTAJ:
     reports:
       junit: test-results/results.xml
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    # Przenosimy raport Playwrighta do folderu public
+    # Uwaga: Playwright generuje folder 'playwright-report'. 
+    # My chcemy, żeby zawartość tego folderu była główną stroną.
+    - mv playwright-report/* public/
+  artifacts:
+    paths:
+      - public
+  # Uruchom tylko na głównej gałęzi (żeby nie nadpisywać raportu z każdego brancha)
+  # Lub usuń tę sekcję, jeśli chcesz publikować z każdego commita
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
