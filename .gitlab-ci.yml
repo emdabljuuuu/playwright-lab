@@ -1,34 +1,15 @@
-# 1. Definiujemy, w jakim obrazie domyślnie uruchamiają się skrypty
-# Używamy tego samego, co w Dockerfile!
-image: mcr.microsoft.com/playwright:v1.50.0-jammy
-
-# 2. Definiujemy etapy (Stages)
 stages:
   - test
   - deploy
 
-# 3. Definiujemy Joba "e2e-tests"
-playwright-job:
-  stage: test
-
-  # 1. Prosimy GitLaba o 3 maszyny równolegle
-  parallel: 3
-
-  script:
-    - npm ci --cache .npm --prefer-offline
-    # 2. Mówimy Playwrightowi: "Jesteś maszyną numer X z Y. Wykonaj swoją część."
-    # Zmienne CI_NODE_INDEX i CI_NODE_TOTAL GitLab podstawia sam!
-    - npx playwright test --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
-  
-  # 4. Serwisy poboczne (Baza Danych)
+.playwrigth-base:
+  image: mcr.microsoft.com/playwright:v1.50.0-jammy
   services:
     - name: postgres:latest
       # WAŻNE: To jest nazwa hosta, pod którą baza będzie widoczna dla testów!
       alias: postgres-db 
       # Environment variables DLA BAZY (żeby wiedziała jak wstać)
       command: ["postgres", "-c", "fsync=off"] # Opcjonalna optymalizacja dla CI (szybciej, mniej bezpiecznie)
-
-  # 5. Zmienne globalne (dostępne dla testów i serwisów)
   variables:
     # Konfiguracja Bazy (musi pasować do tego co wyżej)
     POSTGRES_DB: postgres
@@ -43,21 +24,12 @@ playwright-job:
     
     # Cache Playwrighta (żeby nie instalować przeglądarek jeśli są w obrazie)
     PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
-
-  # 6. Cache (przyspieszamy npm install)
   cache:
     key: 
       files:
         - package-lock.json # Cache unieważnia się TYLKO gdy zmieni się ten plik
     paths:
       - .npm/
-
-  # 7. Właściwe kroki
-  script:
-    - npm ci --cache .npm --prefer-offline
-    - npx playwright test
-
-  # 8. Raporty
   artifacts:
     when: always
     paths:
@@ -68,6 +40,25 @@ playwright-job:
     # 🔥 MAGIA DZIEJE SIĘ TUTAJ:
     reports:
       junit: test-results/results.xml
+
+
+# 3. Definiujemy Joba "e2e-tests"
+playwright-job:
+  extends: .playwright-base
+  stage: test
+
+  # 1. Prosimy GitLaba o 3 maszyny równolegle
+  parallel: 3
+
+  script:
+    - npm ci --cache .npm --prefer-offline
+    # 2. Mówimy Playwrightowi: "Jesteś maszyną numer X z Y. Wykonaj swoją część."
+    # Zmienne CI_NODE_INDEX i CI_NODE_TOTAL GitLab podstawia sam!
+    - npx playwright test --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
+
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npx playwright test
 
 pages:
   stage: deploy
