@@ -2,7 +2,7 @@ stages:
   - test
   - deploy
 
-.playwrigth-base:
+.playwright-base:
   image: mcr.microsoft.com/playwright:v1.50.0-jammy
   services:
     - name: postgres:latest
