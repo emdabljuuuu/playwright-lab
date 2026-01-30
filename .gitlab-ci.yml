@@ -41,24 +41,23 @@ stages:
     reports:
       junit: test-results/results.xml
 
-
-# 3. Definiujemy Joba "e2e-tests"
-playwright-job:
+# Testy Desktopowe
+e2e-desktop:
   extends: .playwright-base
   stage: test
-
-  # 1. Prosimy GitLaba o 3 maszyny równolegle
   parallel: 3
-
   script:
     - npm ci --cache .npm --prefer-offline
-    # 2. Mówimy Playwrightowi: "Jesteś maszyną numer X z Y. Wykonaj swoją część."
-    # Zmienne CI_NODE_INDEX i CI_NODE_TOTAL GitLab podstawia sam!
-    - npx playwright test --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
+    - npx playwright test --project=chromium --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
 
+# Testy Mobilne
+e2e-mobile:
+  extends: .playwright-base
+  stage: test
+  parallel: 3
   script:
     - npm ci --cache .npm --prefer-offline
-    - npx playwright test
+    - npx playwright test --project=mobile-safari --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
 
 pages:
   stage: deploy
