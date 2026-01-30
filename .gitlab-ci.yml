@@ -1,10 +1,41 @@
+# To steruje CZY W OGÓLE utworzyć pipeline
+workflow:
+  rules:
+    # 1. Jeśli to Merge Request -> ZAWSZE uruchom
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    
+    # 2. Jeśli to push na branch 'main' -> ZAWSZE uruchom
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    
+    # 3. (Kluczowe) Jeśli to zwykły push na branch, I JEST otwarty Merge Request...
+    # ...to NIE uruchamiaj (bo reguła nr 1 już to obsłużyła).
+    - if: $CI_OPEN_MERGE_REQUESTS
+      when: never
+    
+    # 4. W każdym innym przypadku (np. push na branch bez MR) -> Uruchom
+    - when: always
+
 stages:
   - test
   - deploy
 
 .playwright-base:
   image: mcr.microsoft.com/playwright:v1.50.0-jammy
-  # ✅ POPRAWKA LITERÓWKI
+  rules:
+    # Zawsze uruchom na głównym branchu (Regression)
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: always
+      
+    # Na Merge Requestach uruchom TYLKO JEŚLI dotknąłeś kodu
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - "**/*.ts"
+        - "**/*.js"
+        - "package.json"
+        - "playwright.config.ts"
+        - "docker-compose.yml"
+        - ".gitlab-ci.yml"
+      # Jeśli zmieniłeś tylko README.md, ten job się NIE utworzy!
   parallel: 3
   services:
     - name: postgres:latest
