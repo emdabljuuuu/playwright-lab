@@ -64,28 +64,50 @@ stages:
     reports:
       junit: test-results/results.xml
 
-# Testy Desktopowe
-e2e-desktop:
+e2e-matrix:
   extends: .playwright-base
   stage: test
+  
+  # 🔥 DEFINICJA MACIERZY
+  # To uruchomi job tyle razy, ile masz elementów w liście
+  parallel:
+    matrix:
+      - PROJECT: ['chromium', 'mobile-safari'] 
+        # Upewnij się, że te nazwy pasują do 'name' w playwright.config.ts!
+        # Jeśli nie masz mobile-safari w configu, zmień na 'firefox' lub sam 'chromium'
+
   script:
     - npm ci --cache .npm --prefer-offline
-    # Upewnij się, że masz projekt 'chromium' w playwright.config.ts!
-    - npx playwright test --project=chromium --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
+    
+    # 1. Uruchamiamy test dla konkretnego projektu z macierzy
+    # Używamy zmiennej $PROJECT, którą podstawił GitLab
+    - npx playwright test --project=$PROJECT
+    
+    # 2. Zmieniamy nazwę folderu z raportem, żeby uniknąć konfliktu nazw
+    # Np. mv playwright-report playwright-report-chromium
+    - mv playwright-report playwright-report-$PROJECT
 
-# Testy Mobilne (Zakomentowane do czasu lekcji o łączeniu raportów)
-# e2e-mobile:
-#   extends: .playwright-base
-#   stage: test
-#   script:
-#     - npm ci --cache .npm --prefer-offline
-#     - npx playwright test --project=mobile-safari --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL
+  # 3. Zbieramy artefakty z nowymi nazwami
+  artifacts:
+    when: always
+    paths:
+      - playwright-report-*/  # Gwiazdka łapie wszystkie foldery!
+    reports:
+      junit: test-results/results.xml
 
 pages:
   stage: deploy
   script:
     - mkdir public
-    - mv playwright-report/* public/
+    # Przenosimy WSZYSTKIE raporty do public
+    # Stworzy to strukturę: public/playwright-report-chromium/index.html
+    - mv playwright-report-* public/
+    
+    # Opcjonalnie: Stwórz prosty index.html, żeby łatwo klikać w raporty
+    - echo "<html><body><h1>Raporty Testowe</h1><ul>" > public/index.html
+    - for d in public/*/; do echo "<li><a href='$(basename "$d")/index.html'>$(basename "$d")</a></li>" >> public/index.html; done
+    - echo "</ul></body></html>" >> public/index.html
+    
   artifacts:
     paths:
       - public
