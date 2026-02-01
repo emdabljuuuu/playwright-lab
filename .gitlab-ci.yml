@@ -17,6 +17,7 @@ workflow:
 
 stages:
   - test
+  - performance
   - deploy
 
 .playwright-base:
@@ -94,6 +95,15 @@ e2e-matrix:
       - playwright-report-*/  # Gwiazdka łapie wszystkie foldery!
     reports:
       junit: test-results/results.xml
+
+k6: 
+  stage: performance
+  image: grafana/k6:latest
+  script:
+    - k6 run performance/main.js
+  rules:
+    # 🔥 Uruchom TYLKO jeśli źródłem jest Harmonogram (Schedule)
+    - if: $CI_PIPELINE_SOURCE == "schedule"
 
 pages:
   stage: deploy
